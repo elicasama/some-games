@@ -1,9 +1,4 @@
 import configuracion from "./configuracion";
-import Escenario from "./Escenario";
-import FlujoPrincipal from "./FlujoPrincipal";
-import nivel from "./nivel";
-import tileMapImage from "./assets/img/tilemap.png";
-import AreaDeJuego from "./Canvas";
 import Juego from "./Juego";
 
 window.inicializar = function () {
@@ -14,8 +9,6 @@ window.inicializar = function () {
 
   setInterval(function () {
     juego.correr();
-    // flujoPrincipal.borrarCanvas();
-    // flujoPrincipal.dibujarEsenario();
   }, 1000 / configuracion.FPS);
 
 };

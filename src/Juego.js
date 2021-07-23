@@ -1,8 +1,8 @@
 import configuracion from "./configuracion";
 import Escenario from "./Escenario";
 import nivel from "./nivel";
-import tileMapImage from "./assets/img/tilemap.png";
 import Canvas from "./Canvas";
+import Antorcha from "./Antorchas";
 
 class Juego {
   constructor(canvas, contexto) {
@@ -10,21 +10,20 @@ class Juego {
     this.contexto = contexto;
   }
 
-  imagenDelNivel() {
-    const tileMap = new Image();
-    tileMap.src = tileMapImage;
-    return tileMap;
-  }
-
   crearEsenario() {
     const escenario = new Escenario(
-      nivel,
-      this.imagenDelNivel(),
+      nivel.cuadrilla,
+      nivel.tileMap,
       this.contexto,
       configuracion.altoF,
       configuracion.anchoF
     );
     return escenario;
+  }
+
+  crearAntorcha() {
+    const antorcha1 = new Antorcha(0, 0, this.contexto);
+    return antorcha1;
   }
 
   crearAreaDeJuego() {
@@ -35,6 +34,7 @@ class Juego {
   correr() {
     this.crearAreaDeJuego().borrar();
     this.crearEsenario().dibujar();
+    this.crearAntorcha().dibujar();
   }
 }
 export default Juego;

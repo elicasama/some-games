@@ -1,5 +1,7 @@
+import tileMapImage from "./assets/img/tilemap.png";
 
-const nivel = [
+const nivel = {
+  cuadrilla: [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 2, 2, 0, 0, 0, 2, 2, 2, 2, 0, 0, 2, 2, 0],
     [0, 0, 2, 2, 2, 2, 2, 0, 0, 2, 0, 0, 2, 0, 0],
@@ -10,7 +12,10 @@ const nivel = [
     [0, 2, 2, 2, 0, 0, 2, 0, 0, 0, 1, 0, 0, 2, 0],
     [0, 2, 2, 3, 0, 0, 2, 0, 0, 2, 2, 2, 2, 2, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  ];
+  ],
+  tileMap: new Image(),
+};
 
+nivel.tileMap.src = tileMapImage;
 
-  export default nivel
+export default nivel;
