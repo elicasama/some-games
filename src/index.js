@@ -1,17 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import configuracion from "./configuracion";
+import Escenario from "./Escenario";
+import FlujoPrincipal from "./FlujoPrincipal";
+import nivel from "./nivel";
+import tileMapImage from "./assets/img/tilemap.png";
+import AreaDeJuego from "./Canvas";
+import Juego from "./Juego";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+window.inicializar = function () {
+  const areaDeJuego = window.document.getElementById("canvas");
+  const contexto = areaDeJuego.getContext("2d");
+  
+  const juego = new Juego(areaDeJuego,contexto)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  setInterval(function () {
+    juego.correr();
+    // flujoPrincipal.borrarCanvas();
+    // flujoPrincipal.dibujarEsenario();
+  }, 1000 / configuracion.FPS);
+
+};
