@@ -6,6 +6,14 @@ import Antorcha from "./Antorcha";
 import Enemigo from "./Enemigo";
 import Jugador from "./Jugador";
 
+// const escenario = new Escenario(
+//   nivel.cuadrilla,
+//   nivel.tileMap,
+//   this.contexto,
+//   configuracion.altoF,
+//   configuracion.anchoF
+// );
+
 class Juego {
   constructor(canvas, contexto) {
     this.canvas = canvas;
@@ -53,7 +61,7 @@ class Juego {
 
   dibujar(enemigos) {
     for (let c = 0; c < this.enemigos.length; c++) {
-      //   this.enemigos[c].moverse();
+      this.enemigos[c].moverse();
       this.enemigos[c].dibujar();
     }
   }
@@ -61,6 +69,7 @@ class Juego {
   correr() {
     this.crearAreaDeJuego().borrar();
     this.crearEsenario().dibujar();
+    // escenario.dibujar();
     this.crearAntorcha().dibujar();
     // this.crearEnemigo().dibujar();
     this.crearEnemigos();

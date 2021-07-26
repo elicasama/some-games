@@ -1,7 +1,6 @@
 import configuracion from "./configuracion";
 import nivel from "./nivel";
 
-//Enemigo
 class Enemigo {
   constructor(posicionX, posicionY, contexto) {
     this.x = posicionX;
@@ -9,9 +8,6 @@ class Enemigo {
     this.contexto = contexto;
     this.retraso = 10;
     this.contador = 0;
-    this.direccion = Math.floor(Math.random() * 4);
-    this.retraso = 50; 
-    this.fotograma = 0; 
   }
 
   dibujar() {
@@ -22,66 +18,69 @@ class Enemigo {
       32,
       32,
       configuracion.anchoF * this.x,
-      configuracion.altoF * this.y,  
+      configuracion.altoF * this.y,
       configuracion.anchoF,
       configuracion.altoF
     );
   }
 
-  // compruebaColision(x, y) {
-  //   var colisiona = false;
-  //   if (escenario.cuadrilla[y][x] == 0) colisiona = true;
+  colisiona(x, y) {
+    let colisiona = false;
+    if (nivel.cuadrilla[y][x] === 0) colisiona = true;
 
-  //   return colisiona;
-  // }
+    return colisiona;
+  }
 
-  // moverse() {
-  // //  protagonista.colisionEnemigo(this.x, this.y); // Le envía al protagonista su ubicación para ver si lo mató
+  elegirDestino() {
+    return Math.floor(Math.random() * 4);
+  }
 
-  //   if (this.contador < this.retraso) {
-  //     this.contador++;
-  //   } else {
-  //     this.contador = 0;
+  moverse() {
+    //  protagonista.colisionEnemigo(this.x, this.y); // Le envía al protagonista su ubicación para ver si lo mató
 
-  //     // verificamos que no se ponga en las paredes o zonas en las cuales no se podría pasar
+    if (this.contador < this.retraso) {
+      this.contador++;
+    } else {
+      this.contador = 0;
 
-  //     // ARRIBA (0 es una de las opciones de resultado del Math.floor(Math.random() * 4) y lo tomamos como arriba)
-  //     if (this.direccion == 0) {
-  //       if (this.compruebaColision(this.x, this.y - 1) == false) {
-  //         this.y--;
-  //       } else {
-  //         this.direccion = Math.floor(Math.random() * 4); // que genere una dirección aleatorea
-  //       }
-  //     }
+      // verificamos que no se ponga en las paredes o zonas en las cuales no se podría pasar
 
-  //     //ABAJO
-  //     if (this.direccion == 1) {
-  //       if (this.compruebaColision(this.x, this.y + 1) == false) {
-  //         this.y++;
-  //       } else {
-  //         this.direccion = Math.floor(Math.random() * 4); // que genere una dirección aleatorea
-  //       }
-  //     }
+      // ARRIBA (0 es una de las opciones de resultado del Math.floor(Math.random() * 4) y lo tomamos como arriba)
+      if (this.direccion === 0) {
+        if (!this.colisiona(this.x, this.y - 1)) {
+          this.y--;
+        } else {
+          this.elegirDestino();
+        }
+      }
 
-  //     //Izquierda
-  //     if (this.direccion == 2) {
-  //       if (this.compruebaColision(this.x - 1, this.y) == false) {
-  //         this.x--;
-  //       } else {
-  //         this.direccion = Math.floor(Math.random() * 4); // que genere una dirección aleatorea
-  //       }
-  //     }
-  //     //Derecha
-  //     if (this.direccion == 3) {
-  //       if (this.compruebaColision(this.x + 1, this.y) == false) {
-  //         this.x++;
-  //       } else {
-  //         this.direccion = Math.floor(Math.random() * 4); // que genere una dirección aleatorea
-  //       }
-  //     }
-  //   }
-  // }
+      //ABAJO
+      if (this.direccion === 1) {
+        if (!this.colisiona(this.x, this.y + 1)) {
+          this.y++;
+        } else {
+          this.elegirDestino();
+        }
+      }
+
+      //Izquierda
+      if (this.direccion === 2) {
+        if (!this.colisiona(this.x - 1, this.y)) {
+          this.x--;
+        } else {
+          this.elegirDestino();
+        }
+      }
+      //Derecha
+      if (this.direccion === 3) {
+        if (!this.colisiona(this.x + 1, this.y)) {
+          this.x++;
+        } else {
+          this.elegirDestino();
+        }
+      }
+    }
+  }
 }
 
 export default Enemigo;
-
