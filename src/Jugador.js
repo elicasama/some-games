@@ -46,28 +46,28 @@ class Jugador {
   arriba() {
     if (!this.margenes(this.x, this.y - 1)) {
       this.y--;
-      // this.logicaObjetos();
+      this.encontroUnObjeto();
     }
   }
 
   abajo() {
     if (!this.margenes(this.x, this.y + 1)) {
       this.y++;
-      // this.logicaObjetos();
+      this.encontroUnObjeto();
     }
   }
 
   izquierda() {
     if (!this.margenes(this.x - 1, this.y)) {
       this.x--;
-      // this.logicaObjetos();
+      this.encontroUnObjeto();
     }
   }
 
   derecha() {
     if (!this.margenes(this.x + 1, this.y)) {
       this.x++;
-      // this.logicaObjetos();
+      this.encontroUnObjeto();
     }
   }
 
@@ -89,24 +89,24 @@ class Jugador {
   //   console.log("Perdiste");
   // };
 
-  // this.logicaObjetos = function () {
-  //   // var objeto = escenario[this.y][this.x];
-  //   var objeto = escenario.cuadrilla[this.y][this.x];
+  encontroUnObjeto() {
+    let objeto = nivel.cuadrilla[this.y][this.x];
 
-  //   if (objeto == 3) {
-  //     this.llave = true;
-  //     escenario[this.y][this.x] = 2;
-  //     // escenario.cuadrilla[this.y][this.x] = 2;
-  //   }
+    if (objeto === 3) {
+      this.llave = true;
+      nivel.cuadrilla[this.y][this.x] = 2;
+      console.log("encontraste la llave!!");
+    }
 
-  //   if (objeto == 1) {
-  //     if (this.llave == true) {
-  //       this.victoria();
-  //     } else {
-  //       console.log("no podés pasar");
-  //     }
-  //   }
-  // };
+    if (objeto === 1) {
+      if (this.llave) {
+        // this.victoria();
+        console.log("Ganaste!!");
+      } else {
+        console.log("no podés pasar");
+      }
+    }
+  }
 }
 
 export default Jugador;
