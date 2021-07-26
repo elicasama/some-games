@@ -3,12 +3,12 @@ import nivel from "./nivel";
 
 class Antorcha {
   constructor(posicionX, posicionY, contexto) {
-  this.x = posicionX
-  this.y = posicionY
-  this.contexto = contexto;
-  this.retraso = 10;
-  this.contador = 0;
-  this.fotograma = 0; // 0-3
+    this.x = posicionX;
+    this.y = posicionY;
+    this.contexto = contexto;
+    this.retraso = 10;
+    this.contador = 0;
+    this.fotograma = 0; // 0-3
   }
 
   cambiaFotograma() {
@@ -17,7 +17,7 @@ class Antorcha {
     } else {
       this.fotograma = 0;
     }
-  };
+  }
 
   dibujar() {
     if (this.contador < this.retraso) {
@@ -38,7 +38,7 @@ class Antorcha {
       configuracion.anchoF,
       configuracion.altoF
     );
-  };
-};
+  }
+}
 
 export default Antorcha;
