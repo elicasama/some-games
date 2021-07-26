@@ -4,7 +4,7 @@ import nivel from "./nivel";
 import Canvas from "./Canvas";
 import Antorcha from "./Antorcha";
 import Enemigo from "./Enemigo";
-import Jugador from "./Jugador";
+// import Jugador from "./Jugador";
 
 // const escenario = new Escenario(
 //   nivel.cuadrilla,
@@ -15,10 +15,11 @@ import Jugador from "./Jugador";
 // );
 
 class Juego {
-  constructor(canvas, contexto) {
+  constructor(canvas, contexto, jugador) {
     this.canvas = canvas;
     this.contexto = contexto;
     this.enemigos = [];
+    this.jugador = jugador;
   }
 
   crearEsenario() {
@@ -42,10 +43,10 @@ class Juego {
     return areaDeJuego;
   }
 
-  crearJugador() {
-    const jugador = new Jugador(this.contexto);
-    return jugador;
-  }
+  // crearJugador() {
+  //   const jugador = new Jugador(this.contexto);
+  //   return jugador;
+  // }
 
   crearEnemigos() {
     this.enemigos.push(new Enemigo(11, 2, this.contexto));
@@ -74,7 +75,7 @@ class Juego {
     // this.crearEnemigo().dibujar();
     this.crearEnemigos();
     this.dibujar(this.enemigos);
-    this.crearJugador().dibujar();
+    this.jugador.dibujar();
   }
 }
 export default Juego;

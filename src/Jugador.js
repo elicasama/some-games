@@ -6,8 +6,13 @@ class Jugador {
     this.x = 1;
     this.y = 1;
     this.contexto = contexto;
-    // this.color = "#820be3";
     this.llave = false;
+    this.direccionesJugador = {
+      38: () => this.arriba(),
+      40: () => this.abajo(),
+      37: () => this.izquierda(),
+      39: () => this.derecha(),
+    };
   }
 
   dibujar() {
@@ -30,42 +35,41 @@ class Jugador {
   //     this.muerte();
   // };
 
-  // this.margenes = function (x, y) {
-  //   var colision = false;
+  margenes(x, y) {
+    var colision = false;
 
-  //   // if(escenario[y][x] == 0 || escenario[y][x] == 1)
-  //   if (escenario.cuadrilla[y][x] == 0) colision = true;
+    if (nivel.cuadrilla[y][x] === 0) colision = true;
 
-  //   return colision;
-  // };
+    return colision;
+  }
 
-  // this.arriba = function () {
-  //   if (this.margenes(this.x, this.y - 1) == false) {
-  //     this.y--;
-  //     this.logicaObjetos();
-  //   }
-  // };
+  arriba() {
+    if (!this.margenes(this.x, this.y - 1)) {
+      this.y--;
+      // this.logicaObjetos();
+    }
+  }
 
-  // this.abajo = function () {
-  //   if (this.margenes(this.x, this.y + 1) == false) {
-  //     this.y++;
-  //     this.logicaObjetos();
-  //   }
-  // };
+  abajo() {
+    if (!this.margenes(this.x, this.y + 1)) {
+      this.y++;
+      // this.logicaObjetos();
+    }
+  }
 
-  // this.izquierda = function () {
-  //   if (this.margenes(this.x - 1, this.y) == false) {
-  //     this.x--;
-  //     this.logicaObjetos();
-  //   }
-  // };
+  izquierda() {
+    if (!this.margenes(this.x - 1, this.y)) {
+      this.x--;
+      // this.logicaObjetos();
+    }
+  }
 
-  // this.derecha = function () {
-  //   if (this.margenes(this.x + 1, this.y) == false) {
-  //     this.x++;
-  //     this.logicaObjetos();
-  //   }
-  // };
+  derecha() {
+    if (!this.margenes(this.x + 1, this.y)) {
+      this.x++;
+      // this.logicaObjetos();
+    }
+  }
 
   // this.victoria = function () {
   //   this.x = 1;
