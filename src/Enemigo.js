@@ -1,5 +1,4 @@
 import configuracion from "./configuracion";
-// import configuracion.nivel from "./configuracion.nivel";
 
 class Enemigo {
   constructor(posicionX, posicionY, contexto) {
@@ -35,8 +34,8 @@ class Enemigo {
     return Math.floor(Math.random() * 4);
   }
 
-  moverse() {
-    //  protagonista.colisionEnemigo(this.x, this.y); // Le envía al protagonista su ubicación para ver si lo mató
+  moverse(jugador) {
+    // jugador.colisionEnemigo(this.x, this.y); // Le envía al protagonista su ubicación para ver si lo mató
 
     if (this.contador < this.retraso) {
       this.contador++;

@@ -1,5 +1,4 @@
 import configuracion from "./configuracion";
-// import configuracion.nivel from "./configuracion.nivel";
 
 class Antorcha {
   constructor(posicionX, posicionY, contexto) {

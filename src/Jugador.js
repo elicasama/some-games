@@ -1,5 +1,4 @@
 import configuracion from "./configuracion";
-// import configuracion.nivel from "./configuracion.nivel";
 
 class Jugador {
   constructor(contexto) {
@@ -29,11 +28,9 @@ class Jugador {
     );
   }
 
-  // this.colisionEnemigo = function (x, y) {
-  //   if (this.x == x && this.y == y)
-  //     // console.log("muerto");
-  //     this.muerte();
-  // };
+  // colisionEnemigo(x, y) {
+  //   if (this.x === x && this.y === y) this.muerte();
+  // }
 
   margenes(x, y) {
     var colision = false;
@@ -80,14 +77,14 @@ class Jugador {
   //   console.log("victoria");
   // };
 
-  // this.muerte = function () {
+  // muerte() {
   //   this.x = 1;
   //   this.y = 1;
   //   this.llave = false;
   //   // escenario[8][3] = 3; // ponemos la llave en su sitio
-  //   escenario.cuadrilla[8][3] = 3; // ponemos la llave en su sitio
+  //   configuracion.cuadrilla[8][3] = 3; // ponemos la llave en su sitio
   //   console.log("Perdiste");
-  // };
+  // }
 
   encontroUnObjeto() {
     let objeto = configuracion.nivel.cuadrilla[this.y][this.x];

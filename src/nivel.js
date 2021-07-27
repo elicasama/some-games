@@ -1,21 +1,62 @@
-import tileMapImage from "./assets/img/tilemap.png";
+import configuracion from "./configuracion";
+import contexto from "./contexto";
+import Escenario from "./Escenario";
+import Canvas from "./Canvas";
+import Antorcha from "./Antorcha";
+import Enemigo from "./Enemigo";
 
-const configuracion.nivel = {
-  cuadrilla: [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 2, 2, 0, 0, 0, 2, 2, 2, 2, 0, 0, 2, 2, 0],
-    [0, 0, 2, 2, 2, 2, 2, 0, 0, 2, 0, 0, 2, 0, 0],
-    [0, 0, 2, 0, 0, 0, 2, 2, 0, 2, 2, 2, 2, 0, 0],
-    [0, 0, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0],
-    [0, 2, 2, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0],
-    [0, 0, 2, 0, 0, 0, 2, 2, 2, 0, 0, 2, 2, 2, 0],
-    [0, 2, 2, 2, 0, 0, 2, 0, 0, 0, 1, 0, 0, 2, 0],
-    [0, 2, 2, 3, 0, 0, 2, 0, 0, 2, 2, 2, 2, 2, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  ],
-  tileMap: new Image(),
-};
+class Nivel {
+  constructor() {
+    this.areaDeJuego = configuracion.areaDeJuego;
+    this.contexto = contexto;
+    this.enemigos = [];
+    this.antorchas = [];
+  }
 
-configuracion.nivel.tileMap.src = tileMapImage;
+  crearEsenario() {
+    const escenario = new Escenario(
+      configuracion.nivel.cuadrilla,
+      configuracion.nivel.tileMap,
+      this.contexto,
+      configuracion.altoF,
+      configuracion.anchoF
+    );
+    return escenario;
+  }
 
-export default configuracion.nivel;
+  agregarAntorchas() {
+    this.antorchas.push(new Antorcha(0, 0, this.contexto));
+    this.antorchas.push(new Antorcha(2, 0, this.contexto));
+    this.antorchas.push(new Antorcha(9, 7, this.contexto));
+    this.antorchas.push(new Antorcha(11, 7, this.contexto));
+
+    return this.antorchas;
+  }
+
+  dibujarAntorchas() {
+    for (let a = 0; a < this.enemigos.length; a++) {
+      this.antorchas[a].dibujar();
+    }
+  }
+
+  crearAreaDeJuego() {
+    const areaDeJuego = new Canvas(this.areaDeJuego);
+    return areaDeJuego;
+  }
+
+  agregarEnemigos() {
+    this.enemigos.push(new Enemigo(11, 2, this.contexto));
+    this.enemigos.push(new Enemigo(6, 2, this.contexto));
+    this.enemigos.push(new Enemigo(2, 8, this.contexto));
+    return this.enemigos;
+  }
+
+  dibujarEnemigos(jugador) {
+    for (let c = 0; c < this.enemigos.length; c++) {
+      this.enemigos[c].moverse(jugador);
+      this.enemigos[c].dibujar();
+    }
+  }
+}
+
+export default new Nivel();
