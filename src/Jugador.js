@@ -68,14 +68,14 @@ class Jugador {
     }
   }
 
-  // this.victoria = function () {
-  //   this.x = 1;
-  //   this.y = 1;
-  //   this.llave = false;
-  //   // escenario[8][3] = 3;
-  //   escenario.cuadrilla[8][3] = 3;
-  //   console.log("victoria");
-  // };
+  victoria() {
+    this.x = 1;
+    this.y = 1;
+    this.llave = false;
+    // escenario[8][3] = 3;
+    configuracion.nivel.cuadrilla[8][3] = 3;
+    console.log("victoria");
+  };
 
   // muerte() {
   //   this.x = 1;
@@ -97,7 +97,7 @@ class Jugador {
 
     if (objeto === 1) {
       if (this.llave) {
-        // this.victoria();
+        this.victoria();
         console.log("Ganaste!!");
       } else {
         console.log("no podés pasar");
