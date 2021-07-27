@@ -1,5 +1,5 @@
 import configuracion from "./configuracion";
-import nivel from "./nivel";
+// import configuracion.nivel from "./configuracion.nivel";
 
 class Jugador {
   constructor(contexto) {
@@ -17,7 +17,7 @@ class Jugador {
 
   dibujar() {
     this.contexto.drawImage(
-      nivel.tileMap,
+      configuracion.nivel.tileMap,
       32,
       32,
       32,
@@ -38,7 +38,7 @@ class Jugador {
   margenes(x, y) {
     var colision = false;
 
-    if (nivel.cuadrilla[y][x] === 0) colision = true;
+    if (configuracion.nivel.cuadrilla[y][x] === 0) colision = true;
 
     return colision;
   }
@@ -90,11 +90,11 @@ class Jugador {
   // };
 
   encontroUnObjeto() {
-    let objeto = nivel.cuadrilla[this.y][this.x];
+    let objeto = configuracion.nivel.cuadrilla[this.y][this.x];
 
     if (objeto === 3) {
       this.llave = true;
-      nivel.cuadrilla[this.y][this.x] = 2;
+      configuracion.nivel.cuadrilla[this.y][this.x] = 2;
       console.log("encontraste la llave!!");
     }
 

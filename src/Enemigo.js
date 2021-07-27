@@ -1,5 +1,5 @@
 import configuracion from "./configuracion";
-import nivel from "./nivel";
+// import configuracion.nivel from "./configuracion.nivel";
 
 class Enemigo {
   constructor(posicionX, posicionY, contexto) {
@@ -12,7 +12,7 @@ class Enemigo {
 
   dibujar() {
     this.contexto.drawImage(
-      nivel.tileMap,
+      configuracion.nivel.tileMap,
       0,
       32,
       32,
@@ -26,7 +26,7 @@ class Enemigo {
 
   colisiona(x, y) {
     let colisiona = false;
-    if (nivel.cuadrilla[y][x] === 0) colisiona = true;
+    if (configuracion.nivel.cuadrilla[y][x] === 0) colisiona = true;
 
     return colisiona;
   }

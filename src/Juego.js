@@ -1,14 +1,14 @@
 import configuracion from "./configuracion";
 import Escenario from "./Escenario";
-import nivel from "./nivel";
+// import configuracion.nivel from "./configuracion.nivel";
 import Canvas from "./Canvas";
 import Antorcha from "./Antorcha";
 import Enemigo from "./Enemigo";
 // import Jugador from "./Jugador";
 
 // const escenario = new Escenario(
-//   nivel.cuadrilla,
-//   nivel.tileMap,
+//   configuracion.nivel.cuadrilla,
+//   configuracion.nivel.tileMap,
 //   this.contexto,
 //   configuracion.altoF,
 //   configuracion.anchoF
@@ -25,8 +25,8 @@ class Juego {
 
   crearEsenario() {
     const escenario = new Escenario(
-      nivel.cuadrilla,
-      nivel.tileMap,
+      configuracion.nivel.cuadrilla,
+      configuracion.nivel.tileMap,
       this.contexto,
       configuracion.altoF,
       configuracion.anchoF

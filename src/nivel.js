@@ -1,6 +1,6 @@
 import tileMapImage from "./assets/img/tilemap.png";
 
-const nivel = {
+const configuracion.nivel = {
   cuadrilla: [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 2, 2, 0, 0, 0, 2, 2, 2, 2, 0, 0, 2, 2, 0],
@@ -16,6 +16,6 @@ const nivel = {
   tileMap: new Image(),
 };
 
-nivel.tileMap.src = tileMapImage;
+configuracion.nivel.tileMap.src = tileMapImage;
 
-export default nivel;
+export default configuracion.nivel;

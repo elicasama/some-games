@@ -1,5 +1,5 @@
 import configuracion from "./configuracion";
-import nivel from "./nivel";
+// import configuracion.nivel from "./configuracion.nivel";
 
 class Antorcha {
   constructor(posicionX, posicionY, contexto) {
@@ -28,7 +28,7 @@ class Antorcha {
     }
 
     this.contexto.drawImage(
-      nivel.tileMap,
+      configuracion.nivel.tileMap,
       this.fotograma * 32,
       64,
       32,
