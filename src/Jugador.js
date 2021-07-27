@@ -28,9 +28,9 @@ class Jugador {
     );
   }
 
-  // colisionEnemigo(x, y) {
-  //   if (this.x === x && this.y === y) this.muerte();
-  // }
+  colisionEnemigo(x, y) {
+    if (this.x === x && this.y === y) this.muerte();
+  }
 
   margenes(x, y) {
     var colision = false;
@@ -72,19 +72,17 @@ class Jugador {
     this.x = 1;
     this.y = 1;
     this.llave = false;
-    // escenario[8][3] = 3;
     configuracion.nivel.cuadrilla[8][3] = 3;
     console.log("victoria");
   };
 
-  // muerte() {
-  //   this.x = 1;
-  //   this.y = 1;
-  //   this.llave = false;
-  //   // escenario[8][3] = 3; // ponemos la llave en su sitio
-  //   configuracion.cuadrilla[8][3] = 3; // ponemos la llave en su sitio
-  //   console.log("Perdiste");
-  // }
+  muerte() {
+    this.x = 1;
+    this.y = 1;
+    this.llave = false;
+    configuracion.nivel.cuadrilla[8][3] = 3; // ponemos la llave en su sitio
+    console.log("Perdiste");
+  }
 
   encontroUnObjeto() {
     let objeto = configuracion.nivel.cuadrilla[this.y][this.x];

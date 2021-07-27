@@ -35,7 +35,7 @@ class Enemigo {
   }
 
   moverse(jugador) {
-    // jugador.colisionEnemigo(this.x, this.y); // Le envía al protagonista su ubicación para ver si lo mató
+    jugador.colisionEnemigo(this.x, this.y); // Le envía al protagonista su ubicación para ver si lo mató
 
     if (this.contador < this.retraso) {
       this.contador++;
