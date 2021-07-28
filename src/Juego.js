@@ -1,17 +1,18 @@
 import nivel from "./Nivel";
+const areaDeJuego = nivel.crearAreaDeJuego();
+const escenario = nivel.crearEscenario();
 
 class Juego {
   constructor(jugador) {
     this.jugador = jugador;
   }
+
   correr() {
-    nivel.crearAreaDeJuego().borrar();
-    nivel.crearEsenario().dibujar();
-    nivel.agregarEnemigos();
-    nivel.dibujarEnemigos(this.jugador);
-    nivel.agregarAntorchas();
-    nivel.dibujarAntorchas();
+    areaDeJuego.borrar();
+    escenario.dibujar();
     this.jugador.dibujar();
+    nivel.dibujarEnemigos(this.jugador);
+    nivel.dibujarAntorchas();
   }
 }
 export default Juego;

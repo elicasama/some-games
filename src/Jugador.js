@@ -6,7 +6,7 @@ class Jugador {
     this.y = 1;
     this.contexto = contexto;
     this.llave = false;
-    this.direccionesJugador = {
+    this.direcciones = {
       38: () => this.arriba(),
       40: () => this.abajo(),
       37: () => this.izquierda(),

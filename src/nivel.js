@@ -1,9 +1,10 @@
 import configuracion from "./configuracion";
 import contexto from "./contexto";
 import Escenario from "./Escenario";
-import Canvas from "./Canvas";
 import Antorcha from "./Antorcha";
 import Enemigo from "./Enemigo";
+
+import Canvas from "./Canvas";
 
 class Nivel {
   constructor() {
@@ -13,15 +14,18 @@ class Nivel {
     this.antorchas = [];
   }
 
-  crearEsenario() {
-    const escenario = new Escenario(
+  crearAreaDeJuego() {
+    return new Canvas(configuracion.areaDeJuego);
+  }
+
+  crearEscenario() {
+    return new Escenario(
       configuracion.nivel.cuadrilla,
       configuracion.nivel.tileMap,
       this.contexto,
       configuracion.altoF,
       configuracion.anchoF
     );
-    return escenario;
   }
 
   agregarAntorchas() {
@@ -34,14 +38,9 @@ class Nivel {
   }
 
   dibujarAntorchas() {
-    for (let a = 0; a < this.enemigos.length; a++) {
+    for (let a = 0; a < this.antorchas.length; a++) {
       this.antorchas[a].dibujar();
     }
-  }
-
-  crearAreaDeJuego() {
-    const areaDeJuego = new Canvas(this.areaDeJuego);
-    return areaDeJuego;
   }
 
   agregarEnemigos() {
@@ -56,6 +55,12 @@ class Nivel {
       this.enemigos[c].moverse(jugador);
       this.enemigos[c].dibujar();
     }
+  }
+
+  armarNivel() {
+    this.crearEscenario();
+    this.agregarAntorchas();
+    this.agregarEnemigos();
   }
 }
 
