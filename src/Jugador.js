@@ -1,4 +1,5 @@
 import configuracion from "./configuracion";
+import contexto from "./contexto";
 
 class Jugador {
   constructor(contexto) {
@@ -74,7 +75,7 @@ class Jugador {
     this.llave = false;
     configuracion.nivel.cuadrilla[8][3] = 3;
     console.log("victoria");
-  };
+  }
 
   muerte() {
     this.x = 1;
@@ -104,4 +105,4 @@ class Jugador {
   }
 }
 
-export default Jugador;
+export default new Jugador(contexto);

@@ -4,18 +4,12 @@ import Escenario from "./Escenario";
 import Antorcha from "./Antorcha";
 import Enemigo from "./Enemigo";
 
-import Canvas from "./Canvas";
-
 class Nivel {
   constructor() {
     this.areaDeJuego = configuracion.areaDeJuego;
     this.contexto = contexto;
     this.enemigos = [];
     this.antorchas = [];
-  }
-
-  crearAreaDeJuego() {
-    return new Canvas(configuracion.areaDeJuego);
   }
 
   crearEscenario() {

@@ -1,11 +1,9 @@
-class Canvas {
-  constructor(areaDeJuego) {
-    this.areaDeJuego = areaDeJuego;
-  }
+import configuracion from "./configuracion";
 
+class Canvas {
   borrar() {
-    this.areaDeJuego.width = 750;
-    this.areaDeJuego.height = 500;
+    configuracion.areaDeJuego.width = 750;
+    configuracion.areaDeJuego.height = 500;
   }
 }
-export default Canvas;
+export default new Canvas();

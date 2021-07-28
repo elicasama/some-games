@@ -1,5 +1,6 @@
 import nivel from "./Nivel";
-const areaDeJuego = nivel.crearAreaDeJuego();
+import canvas from "./Canvas";
+
 const escenario = nivel.crearEscenario();
 
 class Juego {
@@ -8,7 +9,7 @@ class Juego {
   }
 
   correr() {
-    areaDeJuego.borrar();
+    canvas.borrar();
     escenario.dibujar();
     this.jugador.dibujar();
     nivel.dibujarEnemigos(this.jugador);
