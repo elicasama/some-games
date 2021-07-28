@@ -1,16 +1,14 @@
 import configuracion from "./configuracion";
 import Juego from "./Juego";
 import nivel from "./Nivel";
-import jugador from "./Jugador";
-
-
+import personajePrincipal from "./PersonajePrincipal";
 
 window.inicializar = function () {
   nivel.armarNivel();
-  const juego = new Juego(jugador);
+  const juego = new Juego(personajePrincipal);
 
   document.addEventListener("keydown", function (tecla) {
-    const funcion = jugador.direcciones[tecla.keyCode];
+    const funcion = personajePrincipal.direcciones[tecla.keyCode];
     if (funcion != null) funcion();
   });
 

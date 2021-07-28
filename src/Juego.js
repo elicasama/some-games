@@ -4,15 +4,15 @@ import canvas from "./Canvas";
 const escenario = nivel.crearEscenario();
 
 class Juego {
-  constructor(jugador) {
-    this.jugador = jugador;
+  constructor(personajePrincipal) {
+    this.personajePrincipal = personajePrincipal;
   }
 
   correr() {
     canvas.borrar();
     escenario.dibujar();
-    this.jugador.dibujar();
-    nivel.dibujarEnemigos(this.jugador);
+    this.personajePrincipal.dibujar();
+    nivel.dibujarEnemigos(this.personajePrincipal);
     nivel.dibujarAntorchas();
   }
 }

@@ -1,7 +1,7 @@
 import configuracion from "./configuracion";
 import contexto from "./contexto";
 
-class Jugador {
+class PersonajePrincipal {
   constructor(contexto) {
     this.x = 1;
     this.y = 1;
@@ -105,4 +105,4 @@ class Jugador {
   }
 }
 
-export default new Jugador(contexto);
+export default new PersonajePrincipal(contexto);

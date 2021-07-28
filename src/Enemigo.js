@@ -41,10 +41,10 @@ class Enemigo {
     return Math.floor(Math.random() * 4);
   }
 
-  moverse(jugador) {
+  moverse(personajePrincipal) {
     this.elegirDestino();
 
-    jugador.colisionEnemigo(this.x, this.y);
+    personajePrincipal.colisionEnemigo(this.x, this.y);
 
     if (this.contador < this.retraso) {
       this.contador++;
