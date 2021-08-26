@@ -1,5 +1,6 @@
 import configuracion from "./configuracion";
 import contexto from "./contexto";
+import constantes from "./constantes";
 
 class PersonajePrincipal {
   constructor(contexto) {
@@ -62,13 +63,13 @@ class PersonajePrincipal {
   encontroUnObjeto() {
     let objeto = configuracion.nivel.cuadrilla[this.y][this.x];
 
-    if (objeto === 3) {
+    if (objeto === constantes.llave) {
       this.llave = true;
       configuracion.nivel.cuadrilla[this.y][this.x] = 2;
       console.log("encontraste la llave!!");
     }
 
-    if (objeto === 1) {
+    if (objeto === constantes.puerta) {
       if (this.llave) {
         this.victoria();
         console.log("Ganaste!!");
