@@ -7,12 +7,6 @@ class PersonajePrincipal {
     this.y = 1;
     this.contexto = contexto;
     this.llave = false;
-    this.direcciones = {
-      38: [0, -1],
-      40: [0, 1],
-      37: [-1, 0],
-      39: [1, 0],
-    };
   }
 
   dibujar() {

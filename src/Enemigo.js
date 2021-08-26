@@ -1,4 +1,5 @@
 import configuracion from "./configuracion";
+import direcciones from "./direcciones";
 
 class Enemigo {
   constructor(posicionX, posicionY, contexto) {
@@ -7,12 +8,6 @@ class Enemigo {
     this.contexto = contexto;
     this.retraso = 30;
     this.contador = 0;
-    // this.direcciones = {
-    //   0: () => this.arriba(),
-    //   1: () => this.abajo(),
-    //   2: () => this.izquierda(),
-    //   3: () => this.derecha(),
-    // };
   }
 
   dibujar() {
@@ -50,39 +45,16 @@ class Enemigo {
 
       // verificamos que no se ponga en las paredes o zonas en las cuales no se podría pasar
 
-      if (this.direccion === 0) {
-        if (!this.colisiona(this.x, this.y - 1)) {
-          this.y--;
-        } else {
-          this.elegirDestino();
+      Object.values(direcciones).forEach(([dx, dy], indice) => {
+        if (this.direccion === indice) {
+          if (!this.colisiona(this.x + dx, this.y + dy)) {
+            this.x += dx;
+            this.y += dy;
+          } else {
+            this.elegirDestino();
+          }
         }
-      }
-
-      //abajo
-
-      if (this.direccion === 1) {
-        if (!this.colisiona(this.x, this.y + 1)) {
-          this.y++;
-        } else {
-          this.elegirDestino();
-        }
-      }
-
-      if (this.direccion === 2) {
-        if (!this.colisiona(this.x - 1, this.y)) {
-          this.x--;
-        } else {
-          this.elegirDestino();
-        }
-      }
-
-      if (this.direccion === 3) {
-        if (!this.colisiona(this.x + 1, this.y)) {
-          this.x++;
-        } else {
-          this.elegirDestino();
-        }
-      }
+      });
     }
   }
 }
