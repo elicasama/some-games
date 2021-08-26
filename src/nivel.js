@@ -44,9 +44,9 @@ class Nivel {
     return this.enemigos;
   }
 
-  dibujarEnemigos(jugador) {
+  dibujarEnemigos(personajePrincipal) {
     for (let c = 0; c < this.enemigos.length; c++) {
-      this.enemigos[c].moverse(jugador);
+      this.enemigos[c].moverse(personajePrincipal);
       this.enemigos[c].dibujar();
     }
   }

@@ -31,6 +31,8 @@ class Enemigo {
   }
 
   colisiona(x, y) {
+    return configuracion.nivel.cuadrilla[y][x] === 0;
+    
     let colisiona = false;
     if (configuracion.nivel.cuadrilla[y][x] === 0) colisiona = true;
 
@@ -60,6 +62,8 @@ class Enemigo {
           this.elegirDestino();
         }
       }
+
+      //abajo
 
       if (this.direccion === 1) {
         if (!this.colisiona(this.x, this.y + 1)) {

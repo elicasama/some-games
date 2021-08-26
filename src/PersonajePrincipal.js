@@ -8,10 +8,10 @@ class PersonajePrincipal {
     this.contexto = contexto;
     this.llave = false;
     this.direcciones = {
-      38: () => this.arriba(),
-      40: () => this.abajo(),
-      37: () => this.izquierda(),
-      39: () => this.derecha(),
+      38: [0, -1],
+      40: [0, 1],
+      37: [-1, 0],
+      39: [1, 0],
     };
   }
 
@@ -41,33 +41,41 @@ class PersonajePrincipal {
     return colision;
   }
 
-  arriba() {
-    if (!this.margenes(this.x, this.y - 1)) {
-      this.y--;
+  mover(dx, dy) {
+    if (!this.margenes(this.x + dx, this.y + dy)) {
+      this.x += dx;
+      this.y += dy;
       this.encontroUnObjeto();
     }
   }
 
-  abajo() {
-    if (!this.margenes(this.x, this.y + 1)) {
-      this.y++;
-      this.encontroUnObjeto();
-    }
-  }
+  // arriba() {
+  //   if (!this.margenes(this.x, this.y - 1)) {
+  //     this.y--;
+  //     this.encontroUnObjeto();
+  //   }
+  // }
 
-  izquierda() {
-    if (!this.margenes(this.x - 1, this.y)) {
-      this.x--;
-      this.encontroUnObjeto();
-    }
-  }
+  // abajo() {
+  //   if (!this.margenes(this.x, this.y + 1)) {
+  //     this.y++;
+  //     this.encontroUnObjeto();
+  //   }
+  // }
 
-  derecha() {
-    if (!this.margenes(this.x + 1, this.y)) {
-      this.x++;
-      this.encontroUnObjeto();
-    }
-  }
+  // izquierda() {
+  //   if (!this.margenes(this.x - 1, this.y)) {
+  //     this.x--;
+  //     this.encontroUnObjeto();
+  //   }
+  // }
+
+  // derecha() {
+  //   if (!this.margenes(this.x + 1, this.y)) {
+  //     this.x++;
+  //     this.encontroUnObjeto();
+  //   }
+  // }
 
   victoria() {
     this.x = 1;

@@ -8,8 +8,11 @@ window.inicializar = function () {
   const juego = new Juego(personajePrincipal);
 
   document.addEventListener("keydown", function (tecla) {
-    const funcion = personajePrincipal.direcciones[tecla.keyCode];
-    if (funcion != null) funcion();
+    const direccion = personajePrincipal.direcciones[tecla.keyCode];
+    if (direccion != null) {
+      const [dx, dy] = direccion;
+      personajePrincipal.mover(dx, dy);
+    }
   });
 
   setInterval(function () {
