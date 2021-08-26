@@ -5,7 +5,6 @@ import personajePrincipal from "./PersonajePrincipal";
 import direcciones from "./direcciones";
 
 window.inicializar = function () {
-  nivel.armarNivel();
   const juego = new Juego(personajePrincipal);
 
   document.addEventListener("keydown", function (tecla) {

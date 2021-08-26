@@ -10,6 +10,8 @@ class Nivel {
     this.contexto = contexto;
     this.enemigos = [];
     this.antorchas = [];
+
+    this.armarNivel();
   }
 
   crearEscenario() {
