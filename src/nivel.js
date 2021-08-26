@@ -25,12 +25,12 @@ class Nivel {
   }
 
   agregarAntorchas() {
-    this.antorchas.push(new Antorcha(0, 0, this.contexto));
-    this.antorchas.push(new Antorcha(2, 0, this.contexto));
-    this.antorchas.push(new Antorcha(9, 7, this.contexto));
-    this.antorchas.push(new Antorcha(11, 7, this.contexto));
-
-    return this.antorchas;
+    return this.agregarElementos(Antorcha, this.antorchas, [
+      [0, 0],
+      [2, 0],
+      [9, 7],
+      [11, 7],
+    ]);
   }
 
   dibujarAntorchas() {
@@ -40,10 +40,19 @@ class Nivel {
   }
 
   agregarEnemigos() {
-    this.enemigos.push(new Enemigo(11, 2, this.contexto));
-    this.enemigos.push(new Enemigo(6, 2, this.contexto));
-    this.enemigos.push(new Enemigo(2, 8, this.contexto));
-    return this.enemigos;
+    return this.agregarElementos(Enemigo, this.enemigos, [
+      [11, 2],
+      [6, 2],
+      [2, 8],
+    ]);
+  }
+
+  agregarElementos(Elemento, elementos, posiciones) {
+    posiciones.forEach(([x, y]) => {
+      elementos.push(new Elemento(x, y, this.contexto));
+    });
+
+    return elementos;
   }
 
   dibujarEnemigos(personajePrincipal) {
