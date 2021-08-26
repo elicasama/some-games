@@ -43,34 +43,6 @@ class PersonajePrincipal {
     }
   }
 
-  // arriba() {
-  //   if (!this.margenes(this.x, this.y - 1)) {
-  //     this.y--;
-  //     this.encontroUnObjeto();
-  //   }
-  // }
-
-  // abajo() {
-  //   if (!this.margenes(this.x, this.y + 1)) {
-  //     this.y++;
-  //     this.encontroUnObjeto();
-  //   }
-  // }
-
-  // izquierda() {
-  //   if (!this.margenes(this.x - 1, this.y)) {
-  //     this.x--;
-  //     this.encontroUnObjeto();
-  //   }
-  // }
-
-  // derecha() {
-  //   if (!this.margenes(this.x + 1, this.y)) {
-  //     this.x++;
-  //     this.encontroUnObjeto();
-  //   }
-  // }
-
   victoria() {
     this.x = 1;
     this.y = 1;
