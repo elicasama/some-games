@@ -2,20 +2,51 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>React App</title>
-  </head>
+    <title>Way to Exit</title>
 
-  <body onload="inicializar()">
-    <canvas id="canvas" class="canvas"></canvas>
-    <h1 id="mensaje" style="display: none">GANASTE!</h1>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="./css/cover.css" rel="stylesheet" />
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0">Some Game</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link active" aria-current="page" href="#">WTE</a>
+            <a class="nav-link" href="https://github.com/elicasama/some-games">GitHub</a>
+            <a class="nav-link" href="#">Contact</a>
+
+          </nav>
+        </div>
+      </header>
+
+      <main class="px-1 py-5" width="750" height="500">
+        <h1>Way to Exit</h1>
+        <body onload="inicializar()" class= "d-flex justify-items-center" >
+          <canvas id="canvas" class="canvas"></canvas>
+      </main>
+    </div>
   </body>
 </html>

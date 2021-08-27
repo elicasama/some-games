@@ -24,8 +24,8 @@ class PersonajePrincipal {
     );
   }
 
-  colisionEnemigo(x, y) {
-    if (this.x === x && this.y === y) this.muerte();
+  colisionaConElEnemigo(x, y) {
+    if (this.x === x && this.y === y) this.perder();
   }
 
   margenes(x, y) {
@@ -40,15 +40,15 @@ class PersonajePrincipal {
     }
   }
 
-  victoria() {
+  ganar() {
     this.x = 1;
     this.y = 1;
     this.tieneLaLlave = false;
     configuracion.nivel.cuadrilla[8][3] = constantes.llave;
-    console.log("victoria");
+    console.log("Ganaste");
   }
 
-  muerte() {
+  perder() {
     this.x = 1;
     this.y = 1;
     this.tieneLaLlave = false;
@@ -67,7 +67,7 @@ class PersonajePrincipal {
 
     if (objeto === constantes.puerta) {
       if (this.tieneLaLlave) {
-        this.victoria();
+        this.ganar();
         console.log("Ganaste!!");
       } else {
         console.log("no podés pasar");

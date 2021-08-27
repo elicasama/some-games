@@ -11,7 +11,7 @@ class Nivel {
     this.enemigos = [];
     this.antorchas = [];
 
-    this.armarNivel();
+    this.dibujar();
   }
 
   crearEscenario() {
@@ -62,7 +62,7 @@ class Nivel {
     }
   }
 
-  armarNivel() {
+  dibujar() {
     this.crearEscenario();
     this.agregarAntorchas();
     this.agregarEnemigos();

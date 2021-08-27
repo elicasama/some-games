@@ -22,22 +22,22 @@ class Enemigo {
       configuracion.altoDeLaFicha * this.y,
       configuracion.anchoDeLaFicha,
       configuracion.altoDeLaFicha,
-      (this.direccion = this.elegirDestino())
+      (this.direccion = this.obtenerNuevoDestino())
     );
   }
 
-  colisiona(x, y) {
+  puedePasar(x, y) {
     return configuracion.nivel.cuadrilla[y][x] === constantes.pared;
   }
 
-  elegirDestino() {
+  obtenerNuevoDestino() {
     return Math.floor(Math.random() * 4);
   }
 
   moverse(personajePrincipal) {
-    this.elegirDestino();
+    this.obtenerNuevoDestino();
 
-    personajePrincipal.colisionEnemigo(this.x, this.y);
+    personajePrincipal.colisionaConElEnemigo(this.x, this.y);
 
     if (this.contador < this.retraso) {
       this.contador++;
@@ -48,11 +48,11 @@ class Enemigo {
 
       Object.values(direcciones).forEach(([dx, dy], indice) => {
         if (this.direccion === indice) {
-          if (!this.colisiona(this.x + dx, this.y + dy)) {
+          if (!this.puedePasar(this.x + dx, this.y + dy)) {
             this.x += dx;
             this.y += dy;
           } else {
-            this.elegirDestino();
+            this.obtenerNuevoDestino();
           }
         }
       });
