@@ -1,5 +1,6 @@
 import configuracion from "./configuracion";
 import direcciones from "./direcciones";
+import constantes from "./constantes";
 
 class Enemigo {
   constructor(posicionX, posicionY, contexto) {
@@ -17,16 +18,16 @@ class Enemigo {
       32,
       32,
       32,
-      configuracion.anchoF * this.x,
-      configuracion.altoF * this.y,
-      configuracion.anchoF,
-      configuracion.altoF,
+      configuracion.anchoDeLaFicha * this.x,
+      configuracion.altoDeLaFicha * this.y,
+      configuracion.anchoDeLaFicha,
+      configuracion.altoDeLaFicha,
       (this.direccion = this.elegirDestino())
     );
   }
 
   colisiona(x, y) {
-    return configuracion.nivel.cuadrilla[y][x] === 0;
+    return configuracion.nivel.cuadrilla[y][x] === constantes.pared;
   }
 
   elegirDestino() {

@@ -7,7 +7,7 @@ class PersonajePrincipal {
     this.x = 1;
     this.y = 1;
     this.contexto = contexto;
-    this.llave = false;
+    this.tieneLaLlave = false;
   }
 
   dibujar() {
@@ -17,10 +17,10 @@ class PersonajePrincipal {
       32,
       32,
       32,
-      this.x * configuracion.anchoF,
-      this.y * configuracion.altoF,
-      configuracion.anchoF,
-      configuracion.altoF
+      this.x * configuracion.anchoDeLaFicha,
+      this.y * configuracion.altoDeLaFicha,
+      configuracion.anchoDeLaFicha,
+      configuracion.altoDeLaFicha
     );
   }
 
@@ -29,11 +29,7 @@ class PersonajePrincipal {
   }
 
   margenes(x, y) {
-    var colision = false;
-
-    if (configuracion.nivel.cuadrilla[y][x] === 0) colision = true;
-
-    return colision;
+    return configuracion.nivel.cuadrilla[y][x] === constantes.pared;
   }
 
   mover(dx, dy) {
@@ -47,15 +43,15 @@ class PersonajePrincipal {
   victoria() {
     this.x = 1;
     this.y = 1;
-    this.llave = false;
-    configuracion.nivel.cuadrilla[8][3] = 3;
+    this.tieneLaLlave = false;
+    configuracion.nivel.cuadrilla[8][3] = constantes.llave;
     console.log("victoria");
   }
 
   muerte() {
     this.x = 1;
     this.y = 1;
-    this.llave = false;
+    this.tieneLaLlave = false;
     configuracion.nivel.cuadrilla[8][3] = 3; // ponemos la llave en su sitio
     console.log("Perdiste");
   }
@@ -64,13 +60,13 @@ class PersonajePrincipal {
     let objeto = configuracion.nivel.cuadrilla[this.y][this.x];
 
     if (objeto === constantes.llave) {
-      this.llave = true;
-      configuracion.nivel.cuadrilla[this.y][this.x] = 2;
+      this.tieneLaLlave = true;
+      configuracion.nivel.cuadrilla[this.y][this.x] = constantes.camino;
       console.log("encontraste la llave!!");
     }
 
     if (objeto === constantes.puerta) {
-      if (this.llave) {
+      if (this.tieneLaLlave) {
         this.victoria();
         console.log("Ganaste!!");
       } else {

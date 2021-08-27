@@ -1,8 +1,8 @@
 import tileMapImage from "./assets/img/tilemap.png";
 
 const configuracion = {
-  anchoF: 50,
-  altoF: 50,
+  anchoDeLaFicha: 50,
+  altoDeLaFicha: 50,
   FPS: 50,
   nivel: {
     cuadrilla: [

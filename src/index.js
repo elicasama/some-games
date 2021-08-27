@@ -1,6 +1,5 @@
 import configuracion from "./configuracion";
 import Juego from "./Juego";
-import nivel from "./Nivel";
 import personajePrincipal from "./PersonajePrincipal";
 import direcciones from "./direcciones";
 

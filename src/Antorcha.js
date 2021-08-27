@@ -10,7 +10,7 @@ class Antorcha {
     this.fotograma = 0; // 0-3
   }
 
-  cambiaFotograma() {
+  cambiarFotograma() {
     if (this.fotograma < 3) {
       this.fotograma++;
     } else {
@@ -23,7 +23,7 @@ class Antorcha {
       this.contador++;
     } else {
       this.contador = 0;
-      this.cambiaFotograma();
+      this.cambiarFotograma();
     }
 
     this.contexto.drawImage(
@@ -32,10 +32,10 @@ class Antorcha {
       64,
       32,
       32,
-      configuracion.anchoF * this.x,
-      configuracion.altoF * this.y,
-      configuracion.anchoF,
-      configuracion.altoF
+      configuracion.anchoDeLaFicha * this.x,
+      configuracion.altoDeLaFicha * this.y,
+      configuracion.anchoDeLaFicha,
+      configuracion.altoDeLaFicha
     );
   }
 }

@@ -19,8 +19,8 @@ class Nivel {
       configuracion.nivel.cuadrilla,
       configuracion.nivel.tileMap,
       this.contexto,
-      configuracion.altoF,
-      configuracion.anchoF
+      configuracion.altoDeLaFicha,
+      configuracion.anchoDeLaFicha
     );
   }
 

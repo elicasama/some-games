@@ -1,10 +1,10 @@
 class Escenario {
-  constructor(cuadrilla, tileMap, contexto, altoF, anchoF) {
+  constructor(cuadrilla, tileMap, contexto, altoDeLaFicha, anchoDeLaFicha) {
     this.cuadrilla = cuadrilla;
     this.tileMap = tileMap;
     this.contexto = contexto;
-    this.altoF = altoF;
-    this.anchoF = anchoF;
+    this.altoDeLaFicha = altoDeLaFicha;
+    this.anchoDeLaFicha = anchoDeLaFicha;
   }
 
   dibujar() {
@@ -18,10 +18,10 @@ class Escenario {
           0,
           32,
           32,
-          this.anchoF * x,
-          this.altoF * y,
-          this.anchoF,
-          this.altoF
+          this.anchoDeLaFicha * x,
+          this.altoDeLaFicha * y,
+          this.anchoDeLaFicha,
+          this.altoDeLaFicha
         );
       }
     }
