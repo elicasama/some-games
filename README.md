@@ -1,5 +1,7 @@
 # The way to the exit
 
+ https://elicasama.github.io/the_way_to_exit/
+
 El proyecto consiste tomar el código de un juego estilo puzzle y hacer el refactor del mismo
 
 ## El juego
