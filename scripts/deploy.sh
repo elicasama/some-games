@@ -2,7 +2,7 @@
 
 . ./scripts/try.sh
 
-APP_NAME="some-games"
+APP_NAME="the_way_to_exit"
 
 USERNAME="$1"
 TOKEN="$2"
