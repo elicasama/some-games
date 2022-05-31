@@ -1,17 +1,31 @@
 # The way to the exit
 
- https://elicasama.github.io/the_way_to_exit/
+[The way to the exit](https://elicasama.github.io/the_way_to_exit/) es un prototipo para un juego de mazmorras.
 
-El proyecto consiste tomar el código de un juego estilo puzzle y hacer el refactor del mismo
+![Tablero](./src/assets/img/preview.png)
+
+⚠️ - Es un prototipo, solo muestra un nivel del juego.
+
+## El Proyecto
+
+El proyecto consistió en tomar el código básico de un juego estilo puzzle y hacer el refactor del mismo.
+
+El desarrollo está realizado en JavaScript y HTML  
 
 ## El juego
 
-Sortea a los enemigos y escapa de la mazmorra!!!!!
+Usando las flechas del teclado ayuda a nuestro heroe a sortear a los enemigos ☠️, recuperar la 🗝️ y salir de la mazmorra 🏆
 
-## Imagenes
+## Desafíos
 
-Las imágenes son crédito de https://opengameart.org/content/dungeon-crawl-32x32-tiles
+En el proceso aprendí
 
-## Bibliotecas
+- Armado de mapas de juego, animación por código.
+- Colisiones y control de personajes por teclado.
+- Uso de librerías externas
 
-Keypress: https://dmauro.github.io/Keypress
+## Recursos
+
+- Imágenes: [OpenGamArt.Com](https://opengameart.org/)
+
+- Líbrería: [Keypress](https://dmauro.github.io/Keypress)
